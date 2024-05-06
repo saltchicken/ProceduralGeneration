@@ -21,12 +21,12 @@ def display_noise(noise_map):
     plt.colorbar()
     plt.show()
 # Generate Perlin noise
-width = 512
-height = 512
+width = 220
+height = 180
 scale = 100.0
 octaves = 6
-persistence = 0.5
-lacunarity = 2.0
+persistence = 1.0
+lacunarity = 1.0
 seed = np.random.randint(0, 100)
 noise_map = generate_perlin_noise(width, height, scale, octaves, persistence, lacunarity, seed)
 

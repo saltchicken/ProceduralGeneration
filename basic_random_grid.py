@@ -1,4 +1,5 @@
 import numpy as np
+import json
 
 class RandomGrid:
     def __init__(self, input_pattern, output_shape):
@@ -24,9 +25,12 @@ class RandomGrid:
 
 if __name__ == '__main__':
     # Example input pattern (colors represented as integers)
-    input_pattern = [0, 1, 2, 3]  # For simplicity, let's assume 4 different colors
-    output_shape = (22, 18)  # Desired output shape
+    input_pattern = [0, 1]  # For simplicity, let's assume 4 different colors
+    output_shape = (400, 400)  # Desired output shape
 
     random_grid = RandomGrid(input_pattern, output_shape)
     random_grid.init_grid()
-    random_grid.print_output()
+    # print(random_grid.output_pattern)
+    with open('data.json', 'w') as json_file:
+        json.dump(random_grid.output_pattern.tolist(), json_file)
+    # random_grid.print_output()
